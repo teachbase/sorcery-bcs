@@ -26,6 +26,12 @@ module Sorcery
 
       def get_user_hash(access_token)
         user_hash = auth_hash(access_token)
+
+        headers = { authorization: "Bearer #{access_token.token}" }
+        response = access_token.get(user_info_url, headers: headers)
+
+        user_hash[:uid] = user_hash[:user_info]["id"] if user_hash[:user_info] = JSON.parse(response.body)
+
         user_hash
       end
 

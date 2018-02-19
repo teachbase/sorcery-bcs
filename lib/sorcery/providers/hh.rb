@@ -24,10 +24,21 @@ module Sorcery
         @grant_type     = 'authorization_code'
       end
 
+      def get_user_hash(access_token)
+        user_hash = auth_hash(access_token)
+        user_hash
+      end
+
+      def login_url(params, session)
+        authorize_url({ authorize_url: auth_path })
+      end
+
       def process_callback(params, session)
         args = {}.tap do |a|
           a[:code] = params[:code] if params[:code]
         end
+
+        get_access_token(args, token_url: token_path, token_method: :post)
       end
     end
   end

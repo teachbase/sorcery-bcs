@@ -42,7 +42,7 @@ module Sorcery
           a[:code] = params[:code] if params[:code]
         end
 
-        get_access_token(args, token_url: token_path, token_method: :post)
+        get_access_token(args, token_url: token_path, mode: :query, param_name: :access_token)
       end
     end
   end

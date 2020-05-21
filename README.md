@@ -1,4 +1,4 @@
-# Sorcery::Hh
+# Sorcery::Bcs
 
 **BCS** as auth provider in Sorcery
 

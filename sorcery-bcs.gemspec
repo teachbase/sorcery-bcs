@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sorcery/hh/version"
+require "sorcery/bcs/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "sorcery-hh"
-  spec.version       = Sorcery::Hh::VERSION
-  spec.authors       = ["earendil95"]
-  spec.email         = ["ermak95@gmail.com"]
+  spec.name          = "sorcery-bcs"
+  spec.version       = Sorcery::Bcs::VERSION
+  spec.authors       = ["AlexanderShvaykin"]
+  spec.email         = ["skiline.alex@gmail.com"]
 
   spec.summary       = %q{Sorcery provider for HeadHunter}
-  spec.homepage      = "https://github.com/teachbase/sorcery-hh"
+  spec.homepage      = "https://github.com/teachbase/sorcery-bcs"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'sorcery', "~> 0.9"
-  spec.add_development_dependency "bundler", "~> 1.15"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", "~> 10.0"
 end

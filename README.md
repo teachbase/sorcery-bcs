@@ -1,13 +1,13 @@
 # Sorcery::Hh
 
-[HeadHunter](https://hh.ru) as auth provider in Sorcery
+**BCS** as auth provider in Sorcery
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sorcery-hh'
+gem 'sorcery-bcs'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorcery-hh
+    $ gem install sorcery-bcs
 
 ## Usage
 
-Just add this gem and you can use HeadHunter as auth provider
+Just add this gem and you can use BCS as auth provider
 
 ## Development
 

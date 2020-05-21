@@ -1,5 +1,5 @@
 module Sorcery
-  module Hh
+  module Bcs
     VERSION = "0.1.0"
   end
 end

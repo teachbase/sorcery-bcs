@@ -11,7 +11,7 @@ module Sorcery
     class Bcs < Base
       include Protocols::Oauth2
 
-      attr_accessor :auth_path, :token_path, :user_info_url, :scope, :response_type
+      attr_accessor :auth_path, :token_path, :user_info_url, :scope, :response_type, :email_suffix
 
       def initialize
         super
@@ -29,6 +29,7 @@ module Sorcery
 
         auth_hash(access_token).tap do |h|
           h[:user_info] = JSON.parse(response.body)
+          h[:user_info]["email"] = generate_email(h[:user_info])
           h[:uid] = h.dig(:user_info, "uid")
         end
       end
@@ -43,6 +44,14 @@ module Sorcery
         end
 
         get_access_token(args, token_url: token_path, mode: :query, param_name: :access_token)
+      end
+
+      private
+
+      def generate_email(user_info)
+        return user_info["email"] if user_info["email"]
+
+        "#{user_info["uid"]}@#{email_suffix}" if email_suffix
       end
     end
   end
